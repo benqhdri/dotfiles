@@ -1,0 +1,6 @@
+[core]
+        editor = vim
+        excludesFile = ~/.gitignore
+[user]
+        email = nigo223@outlook.com
+        name = nigo

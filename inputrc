@@ -1,0 +1,6 @@
+# pageup pagedown自动补全
+"\e[5~": history-search-backward   
+"\e[6~": history-search-forward
+
+# python REPL中支持vim
+set editing-mode vi
