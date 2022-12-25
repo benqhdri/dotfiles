@@ -1,7 +1,6 @@
 ## How to use
 
+simply
 ```shell
-git clone {repo}
-cd my_config
 ./run.sh
 ```

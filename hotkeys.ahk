@@ -20,4 +20,13 @@ return
 
 ; audio funcs
 PrintScreen::Send {Volume_Down}
-Pause::Send {Volume_Up}
+ScrollLock::Send {Volume_Up}
+
+Pause::
+if (toggle := !toggle) {
+    run, nircmd.exe setdefaultsounddevice "tv"
+}
+else {
+    run, nircmd.exe setdefaultsounddevice "earphone"
+}
+return

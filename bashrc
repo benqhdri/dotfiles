@@ -1,6 +1,8 @@
 # alias for cygwin
-alias get="/cygdrive/c/Programs/setup-x86_64.exe -q -P"
+alias get="/cygdrive/c/cygwin64/setup-x86_64.exe -q -P"
 alias s="cygstart"
+alias clion="clion64"
+alias idea="idea64"
 
 set -o vi                           # use vim as default
 
@@ -30,8 +32,9 @@ alias la='ls -a --color'                    # list hidden files
 
 # git commands
 alias gs='git status'
-alias gc='git checkout'
 alias gb='git blame'
+alias gc='git checkout'
+alias gd='git diff'
 alias gl='git log --all --graph --decorate --oneline'
 
 # colors
