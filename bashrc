@@ -32,7 +32,7 @@ alias la='ls -a --color'                    # list hidden files
 
 # git commands
 alias gs='git status'
-alias gb='git blame'
+alias gb='git branch -a'
 alias gc='git checkout'
 alias gd='git diff'
 alias gl='git log --all --graph --decorate --oneline'
