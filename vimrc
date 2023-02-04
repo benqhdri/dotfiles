@@ -1,6 +1,8 @@
 " --- 基础设置
 set nocompatible                                " 关闭兼容模式
 set encoding=utf-8                              " 设置编码为utf-8
+set fileformat=unix
+set clipboard=unnamed                           " 设置剪贴板互通
 
 " --- 语法部分
 syntax on                                       " 打开语法高亮
@@ -8,8 +10,7 @@ set showmatch                                   " 显示匹配的括号
 
 " --- 设置主题 todo
 if has('gui_running')
-    colorscheme default
-    let g:lightline = {'colorscheme': 'default'}
+    colorscheme desert
 endif
 
 filetype plugin indent on " enable file type detection

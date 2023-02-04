@@ -15,7 +15,6 @@
     { "command": { "action": "switchToTab", "index": 5 }, "keys": "alt+6" },
     { "command": { "action": "splitPane", "split": "auto", "splitMode": "duplicate" }, "keys": "alt+shift+d" },
     { "command": "closePane", "keys": "ctrl+shift+c" },
-    
     { "command": "find", "keys": "ctrl+shift+f" }
   ],
   "copyFormatting": "none",
@@ -36,7 +35,7 @@
       {
         "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
         "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
-        "hidden": true,
+        "hidden": false,
         "name": "Windows PowerShell"
       },
       {
