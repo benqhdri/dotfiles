@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-CONFIG_FILES=("aliases" "bash_profile" "bash_prompt" "bashrc" "exports" "functions" "gitconfig" "gitignore" "inputrc" "vimrc")
+CONFIG_FILES=("aliases" "bash_profile" "bash_prompt" "bashrc" "exports" "functions" "gitconfig" "gitignore" "inputrc" "path" "vimrc")
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
 for f in ${CONFIG_FILES[*]}; do

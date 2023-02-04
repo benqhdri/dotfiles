@@ -2,6 +2,7 @@
 
 alias s="/mnt/c/Windows/explorer.exe"
 alias c='clear'
+alias clion="/mnt/c/Program\ Files/JetBrains/CLion\ 2022.1/bin/clion64.exe"
 
 # Easier navigation: .., ..., ...., ....., ~ and -
 alias ..="cd .."
