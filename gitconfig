@@ -84,7 +84,7 @@
 
 [commit]
 	# https://help.github.com/articles/signing-commits-using-gpg/
-	gpgsign = true
+	gpgsign = false
 
 [diff]
 	# Detect copies as well as renames.
@@ -113,3 +113,5 @@
 	insteadOf = "my:"
 [url "git@github.com:"]
 	insteadOf = "gh:"
+[gpg]
+	program = gpg

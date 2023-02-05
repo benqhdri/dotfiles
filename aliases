@@ -3,6 +3,7 @@
 alias s="/mnt/c/Windows/explorer.exe"
 alias c='clear'
 alias clion="/mnt/c/Program\ Files/JetBrains/CLion\ 2022.1/bin/clion64.exe"
+alias gvim="/mnt/c/Program\ Files\ \(x86\)/Vim/vim82/gvim.exe"
 
 # Easier navigation: .., ..., ...., ....., ~ and -
 alias ..="cd .."

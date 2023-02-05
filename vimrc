@@ -8,11 +8,6 @@ set clipboard=unnamed                           " 设置剪贴板互通
 syntax on                                       " 打开语法高亮
 set showmatch                                   " 显示匹配的括号
 
-" --- 设置主题 todo
-if has('gui_running')
-    colorscheme desert
-endif
-
 filetype plugin indent on " enable file type detection
 
 " --- 编辑设置
