@@ -1,7 +1,6 @@
-colorscheme solarized
 " Use 14pt Monaco
-set guifont=Monaco:h14
-" Don’t blink cursor in normal mode
-set guicursor=n:blinkon0
+set guifont=Consolas:h13
 " Better line-height
-set linespace=8
+set linespace=4
+
+au GUIEnter * simalt ~x

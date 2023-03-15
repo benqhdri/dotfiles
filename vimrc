@@ -1,14 +1,19 @@
+" 自动保存
+autocmd TextChanged,TextChangedI * silent write
+
 " --- 基础设置
 set nocompatible                                " 关闭兼容模式
 set encoding=utf-8                              " 设置编码为utf-8
-set fileformat=unix
-set clipboard=unnamed                           " 设置剪贴板互通
 
 " --- 语法部分
 syntax on                                       " 打开语法高亮
 set showmatch                                   " 显示匹配的括号
 
 filetype plugin indent on " enable file type detection
+
+" set cursor shape
+let &t_SI = "\e[6 q"
+let &t_EI = "\e[2 q"
 
 " --- 编辑设置
 set autoindent                                  " 自动缩进
@@ -43,19 +48,13 @@ set hidden
 nmap Q <Nop>                                    " 取消Q功能
 map <C-a> <Nop>
 map <C-x> <Nop>
-" 取消方向键功能
-nnoremap <Left>  :echoe "Use h"<CR>
-nnoremap <Right> :echoe "Use l"<CR>
-nnoremap <Up>    :echoe "Use k"<CR>
-nnoremap <Down>  :echoe "Use j"<CR>
 
-inoremap <Left>  <ESC>:echoe "Use h"<CR>
-inoremap <Right> <ESC>:echoe "Use l"<CR>
-inoremap <Up>    <ESC>:echoe "Use k"<CR>
-inoremap <Down>  <ESC>:echoe "Use j"<CR>
 " 使用Ctrl+C复制，Ctrl+P粘贴剪贴板内容
 vnoremap <C-c> "*y
 nnoremap <C-p> "*p
+xnoremap p pgvy " 粘贴时不会覆写注册器
+
+set clipboard=unnamed
 
 " --- 支持本地配置
 let $LOCALFILE=expand("~/.vimrc_local")

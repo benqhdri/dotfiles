@@ -30,3 +30,19 @@ else {
     run, nircmd.exe setdefaultsounddevice "earphone"
 }
 return
+
+; 切换进程时，使用hjkl
+#IfWinActive ahk_class MultitaskingViewFrame
+h::left
+j::down
+k::up
+l::right
+#IfWinActive
+
+; 在clion中，使用hjkl
+#IfWinActive ahk_exe clion64.exe
+!h::Send {Left}
+!j::Send {Down}
+!k::Send {Up}
+!l::Send {Right}
+#IfWinActive

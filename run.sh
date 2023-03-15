@@ -1,22 +1,30 @@
 #!/usr/bin/env bash
 
-CONFIG_FILES=("aliases" "bash_profile" "bash_prompt" "bashrc" "exports" "functions" "gitconfig" "gitignore" "gvimrc" "inputrc" "path" "vimrc")
-SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+CONFIG_FILES=("aliases" "bash_profile" "bash_prompt" "bashrc" "exports" "functions" "inputrc" "vimrc" "gitconfig" "gitignore" "gitmsg")
+SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
 
-for f in ${CONFIG_FILES[*]}; do
-  # 支持可重入，先删除原来的软链接
-  dotfile="$HOME/.$f"
-  if [ -L "$dotfile" ]
-  then
-    rm -f "$dotfile"
-  fi
+function create_soft_link() {
+  dotfiles=$1
 
-  if [ -f "$dotfile" ]
-  then
-    mv "$dotfile" "$dotfile"_bak
-  fi
-  ln -s "$SCRIPT_DIR/$f" "$dotfile"
-done
+  for f in ${dotfiles[*]}; do
+    # 支持可重入，先删除原来的软链接
+    dotfile="$HOME/.$f"
+    if [ -L "$dotfile" ]; then
+      echo "soft link $f exists, remove it"
+      rm -f "$dotfile"
+    fi
 
-# shellcheck disable=SC1090
-source ~/.bash_profile
+    if [ -f "$dotfile" ]; then
+      mv "$dotfile" "$dotfile"_bak
+    fi
+
+    ln -s "$SCRIPT_DIR/$f" "$dotfile"
+  done
+}
+
+function main() {
+  create_soft_link "${CONFIG_FILES[*]}"
+  source ~/.bash_profile
+}
+
+main

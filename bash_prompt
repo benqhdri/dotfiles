@@ -15,9 +15,14 @@ clr='\[\033[00m\]'      # Reset
 git_branch() {
      git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
-if [ "`id -u`" -eq 0 ]; then
-    # root as #, else as $
-    PS1="${grn}\u@\h ${ylw}\w ${red}\$(git_branch)${clr}\n# "
-else
-    PS1="${grn}\u@\h ${ylw}\w ${red}\$(git_branch)${clr}\n$ "
-fi
+
+# check if user is root
+get_user() {
+  if [ "$(id -u)" -eq 0 ]; then
+    echo "#"
+  else
+    echo "$"
+  fi
+}
+
+PS1="${grn}\u@\h ${ylw}\w ${red}\$(git_branch)${clr}\n\$(get_user) "

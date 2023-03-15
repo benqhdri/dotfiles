@@ -2,44 +2,56 @@
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
     "actions": [
-    { "command": { "action": "moveFocus", "direction": "down" }, "keys": "alt+j" },
-    { "command": { "action": "moveFocus", "direction": "up" }, "keys": "alt+k" },
-    { "command": { "action": "moveFocus", "direction": "right" }, "keys": "alt+l" },
-    { "command": { "action": "moveFocus", "direction": "left" }, "keys": "alt+h" },
-    { "command": { "action": "switchToTab", "index": 0 }, "keys": "alt+1" },
-    { "command": { "action": "switchToTab", "index": 1 }, "keys": "alt+2" },
-    { "command": { "action": "switchToTab", "index": 2 }, "keys": "alt+3" },
-    { "command": { "action": "switchToTab", "index": 3 }, "keys": "alt+4" },
-    { "command": { "action": "switchToTab", "index": 4 }, "keys": "alt+5" },
-    { "command": { "action": "switchToTab", "index": 5 }, "keys": "alt+6" },
-    { "command": "duplicateTab", "keys": "ctrl+shift+n" },
-    { "command": "openTabRenamer", "keys": "alt+shift+r" },
-    { "command": "openTabColorPicker", "keys": "alt+shift+c" },
-    { "command": "closeTab", "keys": "ctrl+shift+c" },
+        { "command": { "action": "switchToTab", "index": 0 }, "keys": "alt+1" },
+        { "command": { "action": "switchToTab", "index": 1 }, "keys": "alt+2" },
+        { "command": { "action": "switchToTab", "index": 2 }, "keys": "alt+3" },
+        { "command": { "action": "switchToTab", "index": 3 }, "keys": "alt+4" },
+        { "command": { "action": "switchToTab", "index": 4 }, "keys": "alt+5" },
+        { "command": { "action": "switchToTab", "index": 5 }, "keys": "alt+6" },
+        { "command": "duplicateTab", "keys": "ctrl+shift+n" },
+        { "command": "openTabRenamer", "keys": "alt+shift+r" },
+        { "command": "openTabColorPicker", "keys": "alt+shift+c" },
+        { "command": "closeTab", "keys": "ctrl+shift+c" },
 
-    { "command": { "action": "splitPane", "split": "auto", "splitMode": "duplicate" }, "keys": "alt+d" },
-    { "command": "closePane", "keys": "alt+shift+d" },
-    { "command": "find", "keys": "ctrl+shift+f" }
+        { "command": { "action": "moveFocus", "direction": "down" }, "keys": "alt+j" },
+        { "command": { "action": "moveFocus", "direction": "up" }, "keys": "alt+k" },
+        { "command": { "action": "moveFocus", "direction": "right" }, "keys": "alt+l" },
+        { "command": { "action": "moveFocus", "direction": "left" }, "keys": "alt+h" },
+        { "command": { "action": "moveFocus", "direction": "nextInOrder" }, "keys": "ctrl+tab" },
+        { "command": { "action": "splitPane", "split": "auto", "splitMode": "duplicate" }, "keys": "alt+d" },
+        { "command": "closePane", "keys": "alt+shift+d" },
+        { "command": "toggleSplitOrientation", "keys": "alt+ctrl+l" },
+        { "command": { "action": "swapPane", "direction": "down" }, "keys": "ctrl+alt+down" },
+        { "command": { "action": "swapPane", "direction": "left" }, "keys": "ctrl+alt+left" },
+        { "command": { "action": "swapPane", "direction": "right" }, "keys": "ctrl+alt+right" },
+        { "command": { "action": "swapPane", "direction": "up" }, "keys": "ctrl+alt+up" },
+
+        { "name": "Ftp get files", "command": {
+            "action": "multipleActions",
+            "actions": [
+                { "action": "sendInput", "input": "ftpget -u root -p root 120.63.24.6 " }
+            ]
+        }, "keys": "ctrl+f6"}
     ],
     "copyFormatting": "none",
     "copyOnSelect": true,
-    "defaultProfile": "{17bf3de4-5353-5709-bcf9-835bd952a95e}",
+    "defaultProfile": "{3c259bc5-5c60-4dbb-b947-e354d5200f0e}",
+    "experimental.detectURLs": false,
     "language": "en-US",
     "launchMode": "maximized",
-    "profiles":
-    {
+    "firstWindowPreference": "persistedWindowLayout",
+    "profiles": {
         "defaults": {},
-        "list":
-        [
+        "list": [
             {
-                "guid": "{17bf3de4-5353-5709-bcf9-835bd952a95e}",
-                "name": "Ubuntu-22.04",
-                "source": "Windows.Terminal.Wsl",
+                "commandline": "C:\\cygwin64\\bin\\bash.exe -i -l",
+                "guid": "{3c259bc5-5c60-4dbb-b947-e354d5200f0e}",
                 "hidden": false,
+                "name": "cygwin",
                 "colorScheme": "One Half Dark",
-                "backgroundImage": "C:\\Users\\pc\\Pictures\\tux.jpg",
+                "backgroundImage": "C:\\Users\\pc\\Pictures\\cygwin.png",
                 "backgroundImageAlignment": "bottomRight",
-                "backgroundImageOpacity": 0.5,
+                "backgroundImageOpacity": 0.4,
                 "backgroundImageStretchMode": "none"
             },
             {
@@ -47,35 +59,10 @@
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
                 "hidden": false,
                 "name": "Windows PowerShell"
-            },
-            {
-                "commandline": "C:\\cygwin64\\bin\\bash.exe -i -l",
-                "guid": "{3c259bc5-5c60-4dbb-b947-e354d5200f0e}",
-                "hidden": true,
-                "name": "cygwin"
-            },
-            {
-                "commandline": "%SystemRoot%\\System32\\cmd.exe",
-                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
-                "hidden": true,
-                "name": "\u547d\u4ee4\u63d0\u793a\u7b26"
-            },
-            {
-                "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
-                "hidden": true,
-                "name": "Azure Cloud Shell",
-                "source": "Windows.Terminal.Azure"
-            },
-            {
-                "guid": "{f9ceaf27-504c-58d7-927c-d1d6a7ac7d3c}",
-                "hidden": true,
-                "name": "Ubuntu 22.04.1 LTS",
-                "source": "CanonicalGroupLimited.Ubuntu22.04LTS_79rhkp1fndgsc"
             }
         ]
     },
-    "schemes":
-    [
+    "schemes": [
         {
             "background": "#0C0C0C",
             "black": "#0C0C0C",
@@ -259,29 +246,6 @@
             "selectionBackground": "#FFFFFF",
             "white": "#D3D7CF",
             "yellow": "#C4A000"
-        },
-        {
-            "background": "#300A24",
-            "black": "#171421",
-            "blue": "#0037DA",
-            "brightBlack": "#767676",
-            "brightBlue": "#08458F",
-            "brightCyan": "#2C9FB3",
-            "brightGreen": "#26A269",
-            "brightPurple": "#A347BA",
-            "brightRed": "#C01C28",
-            "brightWhite": "#F2F2F2",
-            "brightYellow": "#A2734C",
-            "cursorColor": "#FFFFFF",
-            "cyan": "#3A96DD",
-            "foreground": "#FFFFFF",
-            "green": "#26A269",
-            "name": "Ubuntu-22.04-ColorScheme",
-            "purple": "#881798",
-            "red": "#C21A23",
-            "selectionBackground": "#FFFFFF",
-            "white": "#CCCCCC",
-            "yellow": "#A2734C"
         },
         {
             "background": "#000000",
