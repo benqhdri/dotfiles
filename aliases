@@ -2,6 +2,7 @@
 
 alias s="cygstart"
 alias c='clear'
+alias h='history'
 alias clion="/mnt/c/Program\ Files/JetBrains/CLion\ 2022.1/bin/clion64.exe"
 alias gvim="/mnt/c/Program\ Files\ \(x86\)/Vim/vim82/gvim.exe"
 
@@ -13,9 +14,9 @@ alias .....="cd ../../../.."
 
 # Shortcuts
 alias dl="cd ~/downloads"
-alias dt="cd ~/Desktop"
 alias dc="cd ~/code"
-alias dt="cd /tmp"
+alias dt="cd ~/tmp"
+alias dd="cd ~/code/dotfiles"
 
 # git commands
 alias gs='git status'

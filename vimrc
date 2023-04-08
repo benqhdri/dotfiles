@@ -1,5 +1,5 @@
 " 自动保存
-autocmd TextChanged,TextChangedI * silent write
+autocmd TextChanged,TextChangedI *.* silent write
 
 " --- 基础设置
 set nocompatible                                " 关闭兼容模式
@@ -46,12 +46,13 @@ set hidden
 
 " --- 按键映射
 nmap Q <Nop>                                    " 取消Q功能
-map <C-a> <Nop>
 map <C-x> <Nop>
 
-" 使用Ctrl+C复制，Ctrl+P粘贴剪贴板内容
 vnoremap <C-c> "*y
-nnoremap <C-p> "*p
+nnoremap <C-a> ggVG
+inoremap <NL> <ESC>A;<ESC>o
+nnoremap <NL> A;<ESC>o
+
 xnoremap p pgvy " 粘贴时不会覆写注册器
 
 set clipboard=unnamed
@@ -61,3 +62,4 @@ let $LOCALFILE=expand("~/.vimrc_local")
 if filereadable($LOCALFILE)
     source $LOCALFILE
 endif
+
