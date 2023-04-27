@@ -1,6 +1,10 @@
 # python REPL中支持vim
 set editing-mode vi
 
+# Disable 'v' key in normal mode
+set keymap vi-command
+v: ""
+
 # Make Tab autocomplete regardless of filename case
 set completion-ignore-case on
 

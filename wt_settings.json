@@ -35,21 +35,31 @@
     ],
     "copyFormatting": "none",
     "copyOnSelect": true,
-    "defaultProfile": "{3c259bc5-5c60-4dbb-b947-e354d5200f0e}",
+    "defaultProfile": "{78e390db-1bff-4533-9d7c-20f53d8bafa1}",
     "experimental.detectURLs": false,
     "language": "en-US",
     "launchMode": "maximized",
     "firstWindowPreference": "persistedWindowLayout",
     "profiles": {
-        "defaults": {},
+        "defaults": {
+            "bellStyle": "taskbar",
+            "colorScheme": "One Half Dark",
+            "cursorColor": "#FFFFFF",
+            "cursorShape": "bar"
+        },
         "list": [
+            {
+                "guid": "{78e390db-1bff-4533-9d7c-20f53d8bafa1}",
+                "name": "WSL",
+                "historySize": 9001,
+                "snapOnInput": true,
+                "commandline": "wsl ~"
+            },
             {
                 "commandline": "C:\\cygwin64\\bin\\bash.exe -i -l",
                 "guid": "{3c259bc5-5c60-4dbb-b947-e354d5200f0e}",
-                "hidden": false,
+                "hidden": true,
                 "name": "cygwin",
-                "bellStyle": "taskbar",
-                "colorScheme": "One Half Dark",
                 "backgroundImage": "C:\\Users\\pc\\Pictures\\cygwin.png",
                 "backgroundImageAlignment": "bottomRight",
                 "backgroundImageOpacity": 0.4,

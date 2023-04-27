@@ -1,4 +1,1 @@
 export PATH=$PATH:/mnt/c/Windows
-export PATH=$PATH:/cygdrive/c/Users/pc/.cargo/bin
-export PATH=$PATH:/cygdrive/c/cc65/bin
-export PATH=$PATH:/cygdrive/c/cc65/fceux-2.6.5-win64

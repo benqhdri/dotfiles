@@ -2,13 +2,14 @@
 autocmd TextChanged,TextChangedI *.* silent write
 
 " --- 基础设置
-set nocompatible                                " 关闭兼容模式
+set nocompatible                                " 关闭兼容模式;
 set encoding=utf-8                              " 设置编码为utf-8
 
 " --- 语法部分
 syntax on                                       " 打开语法高亮
 set showmatch                                   " 显示匹配的括号
 
+syntax enable
 filetype plugin indent on " enable file type detection
 
 " set cursor shape
@@ -48,10 +49,11 @@ set hidden
 nmap Q <Nop>                                    " 取消Q功能
 map <C-x> <Nop>
 
-vnoremap <C-c> "*y
-nnoremap <C-a> ggVG
-inoremap <NL> <ESC>A;<ESC>o
-nnoremap <NL> A;<ESC>o
+" vnoremap <C-c> "*y
+vnoremap <C-c> :w !clip.exe<CR><CR>
+" nnoremap <C-a> ggVG
+inoremap <NL> <ESC>A;<ESC>
+nnoremap <NL> A;<ESC>
 
 xnoremap p pgvy " 粘贴时不会覆写注册器
 
@@ -62,4 +64,43 @@ let $LOCALFILE=expand("~/.vimrc_local")
 if filereadable($LOCALFILE)
     source $LOCALFILE
 endif
+
+if has("gui_running")
+    " Use 14pt Monaco
+    set guifont=Consolas:h13
+    " Better line-height
+    set linespace=4
+
+    au GUIEnter * simalt ~x
+endif
+nnoremap ]+b :bn<CR>
+
+set nocompatible
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'preservim/nerdtree'
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
+Plugin 'easymotion/vim-easymotion'
+Plugin 'rust-lang/rust.vim'
+
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <buffer> h :call NERDTreeCDUp()<CR>
+nnoremap <buffer> l :call NERDTreeCD()<CR>
+
+nnoremap <C-f> :Files<CR>
+nnoremap <C-s> :Ag<CR>
+
+" Move to word
+map  <Leader>w <Plug>(easymotion-bd-w)
+nmap <Leader>w <Plug>(easymotion-overwin-w)
+
+" Switch buffers
+nnoremap ]b :bn<CR>
+nnoremap [b :bp<CR>
 

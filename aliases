@@ -1,10 +1,9 @@
 #!/usr/bin/env bash
 
-alias s="cygstart"
 alias c='clear'
+alias t='tree -CL 2'
+alias th='tree -hCL 2'
 alias h='history'
-alias clion="/mnt/c/Program\ Files/JetBrains/CLion\ 2022.1/bin/clion64.exe"
-alias gvim="/mnt/c/Program\ Files\ \(x86\)/Vim/vim82/gvim.exe"
 
 # Easier navigation: .., ..., ...., ....., ~ and -
 alias ..="cd .."
@@ -28,6 +27,7 @@ alias gl='git log --all --graph --decorate --oneline'
 
 # list files
 alias l="ls -lF --color=auto"
+alias lh="ls -lhF --color=auto"
 alias ll="ls -lF --color=auto"
 alias la="ls -lAF --color=auto"
 alias lsd="ls -lF --color=auto | grep --color=never '^d'"
@@ -50,3 +50,4 @@ alias reload="exec ${SHELL} -l"
 
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
+
