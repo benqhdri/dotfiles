@@ -1,9 +1,11 @@
+# pageup pagedown自动补全
+"\C-p": history-search-backward
+"\C-n": history-search-forward
+
+"\C-l": clear-screen
+
 # python REPL中支持vim
 set editing-mode vi
-
-# Disable 'v' key in normal mode
-set keymap vi-command
-v: ""
 
 # Make Tab autocomplete regardless of filename case
 set completion-ignore-case on
@@ -13,11 +15,6 @@ set show-all-if-ambiguous on
 
 # Immediately add a trailing slash when autocompleting symlinks to directories
 set mark-symlinked-directories on
-
-# Use the text that has already been typed as the prefix for searching through
-# commands (i.e. more intelligent Up/Down behavior)
-"\e[5~": history-search-backward
-"\e[6~": history-search-forward
 
 # Do not autocomplete hidden files unless the pattern explicitly begins with a dot
 set match-hidden-files off
@@ -42,3 +39,7 @@ set skip-completed-text on
 set input-meta on
 set output-meta on
 set convert-meta off
+
+# Disable `v` in bash command line
+set keymap vi-command
+v: ""

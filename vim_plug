@@ -1,0 +1,14 @@
+call plug#begin()
+Plug 'preservim/nerdtree'
+call plug#end()
+
+" NERDTree
+nnoremap <C-i> <C-i>
+nnoremap <tab> :TagbarClose<CR>:NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+let NERDTreeMapOpenInTab='\t'
+let NERDTreeMapOpenInTabSilent='\T'
+let NERDTreeMapJumpParent='h'
+let NERDTreeChDirMode=2 " change the working directory
+
+

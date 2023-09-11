@@ -1,106 +1,101 @@
-" 自动保存
-autocmd TextChanged,TextChangedI *.* silent write
+if &term =~ "screen."
+    let &t_ti.="\eP\e[2 q\e\\"
+    let &t_SI.="\eP\e[6 q\e\\"
+    let &t_EI.="\eP\e[2 q\e\\"
+    let &t_te.="\eP\e[2 q\e\\"
+else
+    let &t_ti.="\<Esc>[2 q"
+    let &t_SI.="\<Esc>[6 q"
+    let &t_EI.="\<Esc>[2 q"
+    let &t_te.="\<Esc>[2 q"
+endif
 
-" --- 基础设置
-set nocompatible                                " 关闭兼容模式;
-set encoding=utf-8                              " 设置编码为utf-8
+" Auto commands
+autocmd TextChanged,TextChangedI *.* if expand('%:e') != '1' && expand('%:e') != 'exe' | silent write | endif
+autocmd FileType gitcommit,gitrebase,gitconfig set bufhidden=delete
 
-" --- 语法部分
-syntax on                                       " 打开语法高亮
-set showmatch                                   " 显示匹配的括号
+nnoremap <silent>h :nohlsearch<CR>h
+nnoremap <silent>j :nohlsearch<CR>j
+nnoremap <silent>k :nohlsearch<CR>k
+nnoremap <silent>l :nohlsearch<CR>l
 
-syntax enable
-filetype plugin indent on " enable file type detection
-
-" set cursor shape
-let &t_SI = "\e[6 q"
-let &t_EI = "\e[2 q"
-
-" --- 编辑设置
-set autoindent                                  " 自动缩进
-set nu                                          " 行数
-set rnu                                         " 相对行数
-set incsearch                                   " 增量查找
-set lbr                                         " 选择在合适的位置折行
-set scrolloff=10                                " 滚动时保持上下五行
-set nojoinspaces                                " 在两个单词之间不能输入两个空格
-set backspace=indent,eol,start                  " backspace可用
-" set mouse+=a                                    " 支持鼠标
-
-" tab转换为4个空格
-set expandtab
+let mapleader=" "                               " Set leader key to space
+set nofoldenable                                " No default folding
+set showmatch                                   " Go to match
+set nu
+set rnu
+set linebreak
+set scrolloff=10                                " Keep 10 lines when scrolling
+set mouse=nv
+" Change tab to space 4
+set expandtab                                   " Change tab to space
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
-" 智能搜索
-set ignorecase
-set smartcase
-" tab自动补全
-set wildmode=longest,list
-set wildmenu
-" 一些不太懂的配置
-set timeout timeoutlen=1000 ttimeoutlen=100 " fix slow O inserts
-set lazyredraw " skip redrawing screen in some cases
-set history=8192 " more history
-set laststatus=2
-set hidden
+set foldmethod=indent
 
-" --- 按键映射
-nmap Q <Nop>                                    " 取消Q功能
-map <C-x> <Nop>
+set ignorecase                                  " Ignore case
+set smartcase                                   " Search upper case
 
-" vnoremap <C-c> "*y
-vnoremap <C-c> :w !clip.exe<CR><CR>
-" nnoremap <C-a> ggVG
-inoremap <NL> <ESC>A;<ESC>
-nnoremap <NL> A;<ESC>
+set wildmode=longest,list                       " Auto completion
 
-xnoremap p pgvy " 粘贴时不会覆写注册器
+set timeout timeoutlen=1000 ttimeoutlen=100     " Fix slow O inserts
+set lazyredraw
+set history=8192                                " More history
+set laststatus=2                                " Always show status line
+set hidden                                      " Allow switching buffers without save
+set clipboard=unnamed                           " Set vim to use system clipboard
+set fileencodings=utf-8,gb18030                 " Support gbk format
 
-set clipboard=unnamed
+" Not override the register when paste with viual mode
+xnoremap p pgvy
+nnoremap <C-g> :let @+=expand('%:p')<CR>:echo expand('%:p')<CR>
 
-" --- 支持本地配置
+" Terminal settings
+" set termwinscroll=100000                      " Old vim not support
+nnoremap R y$pa<CR>
+
+" Vim diff option
+set diffopt=vertical
+
+" Command mode mapping
+cnoremap <expr> <C-p> wildmenumode() ? "\<C-p>" : "\<Up>"
+cnoremap <expr> <C-n> wildmenumode() ? "\<C-n>" : "\<Down>"
+
+" Buffer operations
+nnoremap <C-p> :bp<CR>
+nnoremap <C-n> :bn<CR>
+nnoremap <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>
+nnoremap <leader>Q :%bd\|e#<CR>
+
+" Window operations
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+tnoremap <C-h> <C-\><C-N><C-w>h
+tnoremap <C-j> <C-\><C-N><C-w>j
+tnoremap <C-k> <C-\><C-N><C-w>k
+tnoremap <C-l> <C-\><C-N><C-w>l
+inoremap <C-h> <C-\><C-N><C-w>h
+inoremap <C-j> <C-\><C-N><C-w>j
+inoremap <C-k> <C-\><C-N><C-w>k
+inoremap <C-l> <C-\><C-N><C-w>l
+nnoremap <A-c> :vs#<CR>
+
+" Self-define functions
+com! FormatJSON %!python -m json.tool
+com! FormatPy %!python3 -m black - -q
+
+" Local variables
+let $WORK_DIR=getcwd()
 let $LOCALFILE=expand("~/.vimrc_local")
 if filereadable($LOCALFILE)
     source $LOCALFILE
 endif
 
-if has("gui_running")
-    " Use 14pt Monaco
-    set guifont=Consolas:h13
-    " Better line-height
-    set linespace=4
-
-    au GUIEnter * simalt ~x
+" Plug configs
+if exists(':PlugInstall')
+    source ~/.vimrc_plug
 endif
-nnoremap ]+b :bn<CR>
-
-set nocompatible
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'preservim/nerdtree'
-Plugin 'junegunn/fzf'
-Plugin 'junegunn/fzf.vim'
-Plugin 'easymotion/vim-easymotion'
-Plugin 'rust-lang/rust.vim'
-
-call vundle#end()            " required
-filetype plugin indent on    " required
-
-nnoremap <C-t> :NERDTreeToggle<CR>
-nnoremap <buffer> h :call NERDTreeCDUp()<CR>
-nnoremap <buffer> l :call NERDTreeCD()<CR>
-
-nnoremap <C-f> :Files<CR>
-nnoremap <C-s> :Ag<CR>
-
-" Move to word
-map  <Leader>w <Plug>(easymotion-bd-w)
-nmap <Leader>w <Plug>(easymotion-overwin-w)
-
-" Switch buffers
-nnoremap ]b :bn<CR>
-nnoremap [b :bp<CR>
 

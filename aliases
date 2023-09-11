@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
 
+alias a="aria2c -x 16 --check-certificate=false"
 alias c='clear'
-alias t='tree -CL 2'
-alias th='tree -hCL 2'
-alias h='history'
+alias t='tree --dirsfirst -F'
+alias s='wslview'
 
+# ---------- fork from mathiasbynens
 # Easier navigation: .., ..., ...., ....., ~ and -
 alias ..="cd .."
 alias ...="cd ../.."
@@ -15,19 +16,15 @@ alias .....="cd ../../../.."
 alias dl="cd ~/downloads"
 alias dc="cd ~/code"
 alias dt="cd ~/tmp"
-alias dd="cd ~/code/dotfiles"
+alias dm="git branch --merged | grep -v '\*' | xargs -i  sh -c 'git branch -D {} && git push -d syf {}'"
+alias gl="git log --pretty=oneline -n 20 --graph --abbrev-commit"
+alias gs="git status"
+alias gb="git branch -a"
+alias gd="git diff"
+alias gp="git pull"
+alias gr="git fetch origin && git rebase -i origin/master"
 
-# git commands
-alias gs='git status'
-alias gb='git branch -a'
-alias gc='git checkout'
-alias gp='git pull'
-alias gd='git diff'
-alias gl='git log --all --graph --decorate --oneline'
-
-# list files
 alias l="ls -lF --color=auto"
-alias lh="ls -lhF --color=auto"
 alias ll="ls -lF --color=auto"
 alias la="ls -lAF --color=auto"
 alias lsd="ls -lF --color=auto | grep --color=never '^d'"
@@ -39,15 +36,14 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
-# Google Chrome
-alias chrome='/mnt/c/Program\ Files/Google/Chrome/Application/chrome.exe'
+# Enable aliases to be sudo’ed
+alias sudo='sudo '
 
-# IP addresses
-alias ip="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
+# URL-encode strings
+alias urlencode='python3 -c "import sys; from urllib.parse import quote; print(quote(sys.argv[1]));"'
 
 # Reload the shell (i.e. invoke as a login shell)
 alias reload="exec ${SHELL} -l"
 
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
-
