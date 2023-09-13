@@ -158,10 +158,14 @@ nnoremap <leader>b <cmd>Git blame<cr>
 colorscheme gruvbox
 " lua configuration
 lua << EOF
-require('telescope').setup({
+require("telescope").setup({
   defaults = {
     layout_strategy = 'vertical',
-    layout_config = {},
+    layout_config = {
+      vertical = {
+        preview_cutoff = 0,
+      },
+    },
   },
 })
 require("telescope").load_extension("live_grep_args")

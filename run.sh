@@ -1,6 +1,7 @@
 CONFIG_FILES=("tmux.conf" "aliases" "bash_profile" "bash_prompt" "bashrc" "bash_completion" "exports" "functions" "inputrc" "vimrc" "vim_plug" "gitconfig" "gitignore" "gitmsg")
 SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
 NVIM_HOME="${HOME}/.config/nvim"
+NVIM_SITE_HOME="${HOME}/.local/share/nvim/site/autoload"
 
 function create_soft_link() {
     destfile=$1
@@ -30,19 +31,36 @@ function main() {
     if [ ! -d "${NVIM_HOME}" ]; then
         mkdir -p "${NVIM_HOME}"
     fi
+    if [ ! -d "${NVIM_SITE_HOME}" ]; then
+        mkdir -p "${NVIM_SITE_HOME}"
+    fi
     create_soft_link "${SCRIPT_DIR}/init.vim" "${NVIM_HOME}/init.vim"
+    cp -f "${SCRIPT_DIR}/plug.vim" "${NVIM_SITE_HOME}/plug.vim"
 
     if [[ $(uname -a) == *"microsoft"* ]]; then
-        echo "WSL environment"
         username=$(cmd.exe /c echo %username% | sed -e "s/\r//g")
-        echo "Current user is ${username}"
+        echo "WSL environment, user is ${username}"
 
-        wt_path="/mnt/c/Users/${username}/AppData/Local/Microsoft/Windows Terminal/settings.json"
-        nvim_ginit_path="/mnt/c/Users/${username}/AppData/Local/nvim/ginit.vim"
-        nvim_init_path="/mnt/c/Users/${username}/AppData/Local/nvim/init.vim"
+        user_home="/mnt/c/Users/${username}"
+        wt_path="${user_home}/AppData/Local/Microsoft/Windows Terminal/settings.json"
+        qt_path="${user_home}/AppData/Local/nvim"
+        qt_site_path="${user_home}/AppData/Local/nvim-data/site/autoload"
+        ssh_path="${user_home}/.ssh"
+
+        if [ ! -d "${qt_path}" ]; then
+            mkdir -p "${qt_path}"
+        fi
+        if [ ! -d "${qt_site_path}" ]; then
+            mkdir -p "${qt_site_path}"
+        fi
+        if [ ! -d "${ssh_path}" ]; then
+            cp -fr "${HOME}/.ssh" "${ssh_path}"
+        fi
+
         cp -f wt_settings.json "${wt_path}"
-        cp -f init.vim "${nvim_init_path}"
-        cp -f ginit.vim "${nvim_ginit_path}"
+        cp -f init.vim "${qt_path}/init.vim"
+        cp -f ginit.vim "${qt_path}/ginit.vim"
+        cp -f plug.vim "${qt_site_path}/plug.vim"
     fi
 
     source ~/.bash_profile

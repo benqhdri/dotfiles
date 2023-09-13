@@ -7,9 +7,6 @@ set guifont=Consolas:h14
 " Full screen start
 au GUIEnter * simalt ~x
 
-" Makes bash open in the working directory
-let $CHERE_INVOKING=1
-
 " Paths will use / instead of \
 set shellslash
 
