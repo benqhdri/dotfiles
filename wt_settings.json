@@ -123,13 +123,7 @@
             {
                 "commandline": "wsl ~",
                 "guid": "{3c259bc5-5c60-4dbb-b947-e354d5200f0e}",
-                "tabColor": "#555753"
-            },
-            {
-                "commandline": "ssh cloud8",
-                "guid": "{9e2e5912-a5f6-11ed-af1b-d3611df79c31}",
-                "name": "cloud8",
-                "tabColor": "#3465A4"
+                "tabColor": "#b8bb26"
             },
             {
                 "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
@@ -140,7 +134,7 @@
                 "commandline": "%SystemRoot%\\System32\\cmd.exe",
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
                 "hidden": true,
-                "name": "\u547d\u4ee4\u63d0\u793a\u7b26"
+                "name": "Cmd"
             }
         ]
     },

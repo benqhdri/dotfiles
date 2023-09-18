@@ -68,6 +68,8 @@ inoremap <C-j> <C-\><C-N><C-w>j
 inoremap <C-k> <C-\><C-N><C-w>k
 inoremap <C-l> <C-\><C-N><C-w>l
 nnoremap <A-c> :vs#<CR>
+nnoremap Q :only<CR>
+tnoremap Q :only<CR>
 
 " Set no highlight when esc
 nnoremap <silent><Esc> :nohlsearch<CR><Esc>
