@@ -34,8 +34,8 @@ function main() {
     if [ ! -d "${NVIM_SITE_HOME}" ]; then
         mkdir -p "${NVIM_SITE_HOME}"
     fi
-    create_soft_link "${SCRIPT_DIR}/init.vim" "${NVIM_HOME}/init.vim"
-    cp -f "${SCRIPT_DIR}/plug.vim" "${NVIM_SITE_HOME}/plug.vim"
+    # create_soft_link "${SCRIPT_DIR}/init.vim" "${NVIM_HOME}/init.vim"
+    # cp -f "${SCRIPT_DIR}/plug.vim" "${NVIM_SITE_HOME}/plug.vim"
 
     if [[ $(uname -a) == *"microsoft"* ]]; then
         username=$(cmd.exe /c echo %username% | sed -e "s/\r//g")
