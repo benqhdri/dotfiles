@@ -2,5 +2,5 @@
 
 simply
 ```shell
-./run.sh
+source run.sh
 ```

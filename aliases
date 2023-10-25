@@ -20,7 +20,7 @@ alias dm="git branch --merged | grep -v '\*' | xargs -i  sh -c 'git branch -D {}
 alias gl="git log --pretty=oneline -n 20 --graph --abbrev-commit"
 alias gs="git status"
 alias gb="git branch -a"
-alias gd="git diff"
+alias gd="git diff origin/master"
 alias gp="git pull"
 alias gr="git fetch origin && git rebase -i origin/master"
 
