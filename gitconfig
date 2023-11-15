@@ -1,6 +1,6 @@
 [user]
-	name = nigo
-	email = nigo223@outlook.com
+	name = shenyifeng
+	email = shenyifeng1@huawei.com
 [http]
     # Avoid CA problems, not safe
     sslVerify = false

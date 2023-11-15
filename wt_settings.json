@@ -24,6 +24,13 @@
 			}
 		},
 		{
+			"keys": "ctrl+/",
+			"command": {
+				"action": "sendInput",
+				"input": "\u001b[47;5u"
+			}
+		},
+		{
 			"command": "duplicateTab",
 			"keys": "ctrl+shift+n"
 		},

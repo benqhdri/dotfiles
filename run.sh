@@ -1,4 +1,4 @@
-CONFIG_FILES=("tmux.conf" "aliases" "bash_profile" "bash_prompt" "bashrc" "bash_completion" "exports" "functions" "inputrc" "gitconfig" "gitignore" "gitmsg")
+CONFIG_FILES=("tmux.conf" "aliases" "bash_profile" "bash_prompt" "bashrc" "bash_completion" "exports" "functions" "inputrc" "gitconfig" "gitignore" "gitmsg" "proxy" )
 SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
 
 function create_soft_link() {
