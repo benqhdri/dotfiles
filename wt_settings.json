@@ -1,125 +1,125 @@
 {
-	"$help": "https://aka.ms/terminal-documentation",
-	"$schema": "https://aka.ms/terminal-profiles-schema",
-	"actions": [
-		{
-			"keys": "shift+enter",
-			"command": {
-				"action": "sendInput",
-				"input": "\u001b[13;2u"
-			}
-		},
-		{
-			"keys": "ctrl+enter",
-			"command": {
-				"action": "sendInput",
-				"input": "\u001b[13;5u"
-			}
-		},
-		{
-			"keys": "ctrl+;",
-			"command": {
-				"action": "sendInput",
-				"input": "\u001b[59;5u"
-			}
-		},
-		{
-			"keys": "ctrl+/",
-			"command": {
-				"action": "sendInput",
-				"input": "\u001b[47;5u"
-			}
-		},
-		{
-			"command": "duplicateTab",
-			"keys": "ctrl+shift+n"
-		},
-		{
-			"command": "openTabRenamer",
-			"keys": "alt+shift+r"
-		},
-		{
-			"command": "openTabColorPicker",
-			"keys": "alt+shift+c"
-		},
-		{
-			"command": "closeTab",
-			"keys": "ctrl+shift+c"
-		},
-		{
-			"command": {
-				"action": "splitPane",
-				"split": "auto",
-				"splitMode": "duplicate"
-			},
-			"keys": "alt+d"
-		},
-		{
-			"command": "closePane",
-			"keys": "alt+shift+d"
-		}
-	],
-	"copyFormatting": "none",
-	"copyOnSelect": true,
-	"defaultProfile": "{3c259bc5-5c60-4dbb-b947-e354d5200f0e}",
-	"experimental.detectURLs": false,
-	"language": "en-US",
-	"launchMode": "maximized",
-	"firstWindowPreference": "persistedWindowLayout",
-	"profiles": {
-		"defaults": {
-			"cursorShape": "filledBox",
-			"colorScheme": "GruvboxDarkHard",
-			"font": {
-				"face": "CaskaydiaCove Nerd Font Mono",
-				"size": 13
-			},
-			"backgroundImageAlignment": "bottomRight",
-			"backgroundImageOpacity": 0.4,
-			"backgroundImageStretchMode": "none"
-		},
-		"list": [
-			{
-				"commandline": "wsl ~",
-				"guid": "{3c259bc5-5c60-4dbb-b947-e354d5200f0e}",
-				"tabColor": "#b8bb26"
-			},
-			{
-				"commandline": "%SystemRoot%\\System32\\cmd.exe",
-				"guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
-				"name": "Cmd"
-			},
-			{
-				"commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
-				"guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
-				"name": "Windows PowerShell"
-			}
-		]
-	},
-	"schemes": [
-		{
-			"name": "GruvboxDarkHard",
-			"black": "#1b1b1b",
-			"red": "#cc241d",
-			"green": "#98971a",
-			"yellow": "#d79921",
-			"blue": "#458588",
-			"purple": "#b16286",
-			"cyan": "#689d6a",
-			"white": "#a89984",
-			"brightBlack": "#928374",
-			"brightRed": "#fb4934",
-			"brightGreen": "#b8bb26",
-			"brightYellow": "#fabd2f",
-			"brightBlue": "#83a598",
-			"brightPurple": "#d3869b",
-			"brightCyan": "#8ec07c",
-			"brightWhite": "#ebdbb2",
-			"background": "#1b1b1b",
-			"foreground": "#ebdbb2",
-			"selectionBackground": "#665c54",
-			"cursorColor": "#ebdbb2"
-		}
-	],
-	"startOnUserLogin": false
+    "$help": "https://aka.ms/terminal-documentation",
+    "$schema": "https://aka.ms/terminal-profiles-schema",
+    "actions": [
+        {
+            "keys": "shift+enter",
+            "command": {
+                "action": "sendInput",
+                "input": "\u001b[13;2u"
+            }
+        },
+        {
+            "keys": "ctrl+enter",
+            "command": {
+                "action": "sendInput",
+                "input": "\u001b[13;5u"
+            }
+        },
+        {
+            "keys": "ctrl+;",
+            "command": {
+                "action": "sendInput",
+                "input": "\u001b[59;5u"
+            }
+        },
+        {
+            "keys": "ctrl+/",
+            "command": {
+                "action": "sendInput",
+                "input": "\u001b[47;5u"
+            }
+        },
+        {
+            "command": "duplicateTab",
+            "keys": "ctrl+shift+n"
+        },
+        {
+            "command": "openTabRenamer",
+            "keys": "alt+shift+r"
+        },
+        {
+            "command": "openTabColorPicker",
+            "keys": "alt+shift+c"
+        },
+        {
+            "command": "closeTab",
+            "keys": "ctrl+shift+c"
+        },
+        {
+            "command": {
+                "action": "splitPane",
+                "split": "auto",
+                "splitMode": "duplicate"
+            },
+            "keys": "alt+d"
+        },
+        {
+            "command": "closePane",
+            "keys": "alt+shift+d"
+        }
+    ],
+    "copyFormatting": "none",
+    "copyOnSelect": true,
+    "defaultProfile": "{3c259bc5-5c60-4dbb-b947-e354d5200f0e}",
+    "experimental.detectURLs": false,
+    "language": "en-US",
+    "launchMode": "maximized",
+    "firstWindowPreference": "persistedWindowLayout",
+    "profiles": {
+        "defaults": {
+            "cursorShape": "filledBox",
+            "colorScheme": "GruvboxDarkHard",
+            "font": {
+                "face": "CaskaydiaCove Nerd Font Mono",
+                "size": 13
+            },
+            "backgroundImageAlignment": "bottomRight",
+            "backgroundImageOpacity": 0.4,
+            "backgroundImageStretchMode": "none"
+        },
+        "list": [
+            {
+                "commandline": "wsl ~",
+                "guid": "{3c259bc5-5c60-4dbb-b947-e354d5200f0e}",
+                "tabColor": "#b8bb26"
+            },
+            {
+                "commandline": "%SystemRoot%\\System32\\cmd.exe",
+                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+                "name": "Cmd"
+            },
+            {
+                "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+                "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+                "name": "Windows PowerShell"
+            }
+        ]
+    },
+    "schemes": [
+        {
+            "name": "GruvboxDarkHard",
+            "black": "#1b1b1b",
+            "red": "#cc241d",
+            "green": "#98971a",
+            "yellow": "#d79921",
+            "blue": "#458588",
+            "purple": "#b16286",
+            "cyan": "#689d6a",
+            "white": "#a89984",
+            "brightBlack": "#928374",
+            "brightRed": "#fb4934",
+            "brightGreen": "#b8bb26",
+            "brightYellow": "#fabd2f",
+            "brightBlue": "#83a598",
+            "brightPurple": "#d3869b",
+            "brightCyan": "#8ec07c",
+            "brightWhite": "#ebdbb2",
+            "background": "#1b1b1b",
+            "foreground": "#ebdbb2",
+            "selectionBackground": "#665c54",
+            "cursorColor": "#ebdbb2"
+        }
+    ],
+    "startOnUserLogin": false
 }

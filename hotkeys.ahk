@@ -6,7 +6,9 @@ CapsLock::
 {
     Send("{Esc}")
     global cur_layout
-    PostMessage(0x50, 0, EN_LAYOUT, , "A")
+    try {
+        PostMessage(0x50, 0, EN_LAYOUT, , "A")
+    }
     cur_layout := EN_LAYOUT
 }
 
