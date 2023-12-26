@@ -69,7 +69,7 @@
     "profiles": {
         "defaults": {
             "cursorShape": "filledBox",
-            "colorScheme": "GruvboxDarkHard",
+            "colorScheme": "Alabaster",
             "font": {
                 "face": "CaskaydiaCove Nerd Font Mono",
                 "size": 13
@@ -97,6 +97,29 @@
         ]
     },
     "schemes": [
+        {
+            "name": "Alabaster",
+            "black": "#000000",
+            "red": "#aa3731",
+            "green": "#448c27",
+            "yellow": "#cb9000",
+            "blue": "#325cc0",
+            "purple": "#7a3e9d",
+            "cyan": "#0083b2",
+            "white": "#f7f7f7",
+            "brightBlack": "#777777",
+            "brightRed": "#f05050",
+            "brightGreen": "#60cb00",
+            "brightYellow": "#ffbc5d",
+            "brightBlue": "#007acc",
+            "brightPurple": "#e64ce6",
+            "brightCyan": "#00aacb",
+            "brightWhite": "#f7f7f7",
+            "background": "#f7f7f7",
+            "foreground": "#000000",
+            "selectionBackground": "#bfdbfe",
+            "cursorColor": "#007acc"
+        },
         {
             "name": "GruvboxDarkHard",
             "black": "#1b1b1b",
