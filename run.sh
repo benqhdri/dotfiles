@@ -30,7 +30,7 @@ function main() {
         echo "WSL environment, user is ${username}"
 
         user_home="/mnt/c/Users/${username}"
-        wt_path="${user_home}/AppData/Local/Microsoft/Windows Terminal/settings.json"
+        terminal_path="${user_home}/AppData/Roaming/alacritty/"
         ssh_path="${user_home}/.ssh"
 
         if [ ! -d "${ssh_path}" ]; then
@@ -38,8 +38,8 @@ function main() {
             cp -fr "${HOME}/.ssh" "${ssh_path}"
         fi
 
-        echo "Start to copy windows terminal configs to ${wt_path}"
-        cp -f wt_settings.json "${wt_path}"
+        echo "Start to copy windows terminal configs to ${terminal_path}"
+        cp -f alacritty.toml "${terminal_path}"
     fi
 
     source ~/.bash_profile

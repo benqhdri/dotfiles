@@ -27,7 +27,7 @@ CapsLock::
 }
 
 !w::!F4
-#t::Run("C:\software\terminal\WindowsTerminal.exe")
+#t::Run("C:\Program Files\Alacritty\alacritty.exe")
 
 ; Windows
 #j::#^Left
@@ -36,8 +36,8 @@ CapsLock::
 RCtrl & Up::Send("{Volume_Up}")
 RCtrl & Down::Send("{Volume_Down}")
 
-#HotIf WinActive("ahk_class MultitaskingViewFrame") ; win10
-; #HotIf WinActive("ahk_class XamlExplorerHostIslandWindow") ; win11
+; #HotIf WinActive("ahk_class MultitaskingViewFrame") ; win10
+#HotIf WinActive("ahk_class XamlExplorerHostIslandWindow") ; win11
 h::left
 j::down
 k::up
